@@ -48,6 +48,6 @@ python stacking.py
 ```
 
 # Finetune Curve
-![](image/loss.png)
-![](image/acc.png)
+<!-- ![](image/loss.png) -->
+<!-- ![](image/acc.png) -->
 ![](image/f1.png)
