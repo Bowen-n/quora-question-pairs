@@ -1,0 +1,11 @@
+python finetune.py \
+    --pre_name roberta-base \
+    --pretrained_model_dir ./pretrain_roberta_e10 \
+    --loss_type focal \
+    --focal_loss_alpha 0.37 0.63 \
+    --focal_loss_gamma 2.4 \
+    --num_epochs 15 \
+    --batch_size 30 \
+    --num_workers 24 \
+    --output_dir qqp_roberta-base_pretrained_e10_focal \
+    --use_fp16
