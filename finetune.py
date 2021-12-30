@@ -102,12 +102,10 @@ training_args = TrainingArguments(
 
 
 def compute_metrics(eval_pred):
-    # 这里使用的是本地metric，主要是防止网络不通，实际上可以直接metric1 = load_metric("accuracy")，程序会从远端加载metric计算方法
     metric1 = load_metric("metrics/accuracy.py")
     metric2 = load_metric("metrics/f1.py")
     logits, labels = eval_pred
     predictions = np.argmax(logits, axis=-1)
-    # 这里要注意metric计算结果是一个dict，需要用key获取对应的指标值
     accuracy = metric1.compute(predictions=predictions, references=labels)['accuracy']
     f1 = metric2.compute(predictions=predictions, references=labels, average='macro')['f1']
     return {"accuracy": accuracy, "f1": f1}

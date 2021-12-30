@@ -1,7 +1,3 @@
-# coding: utf-8
-# Copyright (c) Antfin, Inc. All rights reserved.
-# @Time : 2021/11/24 下午4:06
-# @Author : shuheng.zsh
 from torch import nn
 import torch
 from torch.nn import functional as F
